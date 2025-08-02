@@ -1,5 +1,6 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 /*
 	Dimension by HTML5 UP
@@ -146,7 +147,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: var(--gold);
-		font-family: "Source Sans Pro", sans-serif;
+		font-family: 'EB Garamond', serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -181,6 +182,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: var(--gold);
+		font-family: 'IM Fell English SC', serif;
 		font-weight: 600;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
