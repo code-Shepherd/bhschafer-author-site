@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 100,
+      "value": 60,
       "density": {
         "enable": true,
         "value_area": 800
@@ -11,33 +11,36 @@
       "value": "#d9c182"
     },
     "shape": {
-      "type": "circle",
+      "type": "image",
+      "image": {
+        "src": "images/rad-rune.png",
+        "width": 32,
+        "height": 32
+      },
       "stroke": {
         "width": 0,
         "color": "#000000"
       }
     },
     "opacity": {
-      "value": 1,
+      "value": 0.6,
       "random": true,
       "anim": {
         "enable": false
       }
     },
     "size": {
-      "value": 3,
+      "value": 20,
       "random": true
     },
     "line_linked": {
       "enable": true,
-      "distance": 130,
       "color": "#d9c182",
-      "opacity": 1,
-      "width": 1
+      "opacity": 0.7
     },
     "move": {
       "enable": true,
-      "speed": 0.6,
+      "speed": 0.8,
       "direction": "none",
       "random": true,
       "straight": false,
@@ -59,14 +62,14 @@
     },
     "modes": {
       "grab": {
-        "distance": 160,
+        "distance": 140,
         "line_linked": {
-          "opacity": 0.3
+          "opacity": 0.2
         }
       },
       "repulse": {
         "distance": 200,
-        "duration": 0.6
+        "duration": 0.4
       }
     }
   },
