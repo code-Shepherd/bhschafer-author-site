@@ -1667,51 +1667,62 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 430px;
-  margin-bottom: 2em;
-}
+/* short stories carousel */
+	.carousel-wrapper {
+		position: relative;
+		width: 100%;
+		height: 430px;
+		margin-bottom: 2em;
+	}
 
-.carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1em;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
+	.carousel-slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 1em;
+		text-align: center;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		z-index: 0;
+	}
 
-.carousel-slide.active {
-  opacity: 1;
-  z-index: 1;
-}
+	.carousel-slide.active {
+		opacity: 1;
+		z-index: 1;
+	}
 
-.carousel-slide img {
-  max-height: 260px;
-  width: auto;
-  margin-bottom: 1em;
-  border-radius: 6px;
-}
+	.carousel-slide img {
+		max-height: 260px;
+		width: auto;
+		margin-bottom: 1em;
+		border-radius: 6px;
+	}
 
-.story img.small-img {
-  max-height: 180px;
-  width: auto;
-  display: block;
-  margin-bottom: 1em;
-}
+	.story img.small-img {
+		max-height: 180px;
+		width: auto;
+		display: block;
+		margin-bottom: 1em;
+	}
 
-#particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: transparent;
-  pointer-events: auto;
+	#particles-js {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: transparent;
+		pointer-events: auto;
+	}
+
+	.author-photo img {
+		width: 200px;           /* or any fixed/responsive value */
+		height: 200px;
+		border-radius: 50%;     /* makes it a circle */
+		object-fit: cover;      /* crops image to fill container */
+		display: block;
+		margin: 0 auto 1rem auto;
+		justify-content: left;
 }
