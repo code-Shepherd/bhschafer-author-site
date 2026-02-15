@@ -13,7 +13,7 @@
     "shape": {
       "type": "image",
       "image": {
-        "src": "images/rad-rune.png",
+        "src": "images/rad-rune.webp",
         "width": 32,
         "height": 32
       },
