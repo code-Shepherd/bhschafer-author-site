@@ -1,0 +1,29 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { latestSubstack } from '../data/site';
+
+const formattedDate = new Date(latestSubstack.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<section>
+  <SectionHeading title="Latest from Substack" intro="The formal newsletter archive lives on Substack." />
+  <article class="surface substack">
+    <p class="meta">Published {formattedDate}</p>
+    <h3>{latestSubstack.title}</h3>
+    <p>{latestSubstack.excerpt}</p>
+    <a class="button" href={latestSubstack.url} target="_blank" rel="noreferrer">Read on Substack</a>
+  </article>
+</section>
+
+<style>
+  .substack {
+    padding: 1.5rem;
+  }
+  h3 {
+    margin-top: 0.3rem;
+  }
+</style>

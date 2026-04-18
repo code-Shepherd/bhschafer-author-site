@@ -1,0 +1,55 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/prose.css';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  coverImage?: string;
+}
+
+const { title, description, pubDate, updatedDate, tags = [], coverImage } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Journal | B. H. Schafer`} description={description} image={coverImage || '/images/my-banner.png'}>
+  <article class="prose">
+    <header>
+      <p class="meta">Published {pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      {updatedDate && (
+        <p class="meta">Updated {updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      )}
+      <h1>{title}</h1>
+      <p>{description}</p>
+      {tags.length > 0 && (
+        <ul class="tags" aria-label="tags">
+          {tags.map((tag) => (
+            <li>{tag}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+    {coverImage && <img src={coverImage} alt="Cover art for journal post" loading="lazy" />}
+    <slot />
+  </article>
+</BaseLayout>
+
+<style>
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.6rem;
+    flex-wrap: wrap;
+  }
+  .tags li {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+</style>

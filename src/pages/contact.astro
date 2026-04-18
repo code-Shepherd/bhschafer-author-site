@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<BaseLayout
+  title="Contact | B. H. Schafer"
+  description="Contact B. H. Schafer for reader correspondence, interviews, and collaboration inquiries."
+>
+  <h1>Contact</h1>
+  <p class="intro">
+    For reader correspondence, interviews, collaborations, podcast invitations, or other professional inquiries, email
+    directly.
+  </p>
+
+  <section class="surface contact-card">
+    <h2>Email</h2>
+    <p>
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+    </p>
+    <p class="meta">Please include context, timeline, and any relevant links in your message.</p>
+  </section>
+
+  <section class="surface contact-card">
+    <h2>Quick message template</h2>
+    <form action={`mailto:${siteConfig.email}`} method="post" enctype="text/plain">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button class="button primary" type="submit">Compose Email</button>
+    </form>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    max-width: 60ch;
+  }
+  .contact-card {
+    padding: 1.2rem;
+    max-width: 44rem;
+  }
+  .field {
+    display: grid;
+    gap: 0.35rem;
+    margin-bottom: 0.85rem;
+  }
+  label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  input,
+  textarea {
+    background: #0e121a;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 0.45rem;
+    padding: 0.55rem 0.65rem;
+    font: inherit;
+  }
+  button {
+    cursor: pointer;
+  }
+</style>
