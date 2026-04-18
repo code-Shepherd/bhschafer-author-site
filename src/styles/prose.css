@@ -1,0 +1,25 @@
+.prose {
+  width: min(100%, var(--reading-width));
+}
+
+.prose p,
+.prose li {
+  color: #dfdcd5;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+.prose h2,
+.prose h3 {
+  margin-top: 2rem;
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 2px solid var(--accent-gold);
+  color: #d6c9ad;
+  background: rgba(201, 168, 96, 0.08);
+}

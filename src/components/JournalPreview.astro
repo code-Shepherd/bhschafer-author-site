@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  posts: CollectionEntry<'journal'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section>
+  <SectionHeading title="From the Journal" intro="Short notes on craft, myth, and the architecture of story." />
+  <div class="grid cols-3">
+    {posts.map((post) => (
+      <article class="surface card">
+        <p class="meta">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+        <h3><a href={`/journal/${post.slug}/`}>{post.data.title}</a></h3>
+        <p>{post.data.description}</p>
+      </article>
+    ))}
+  </div>
+  <p style="margin-top: 1rem;"><a class="button" href="/journal">View full Journal archive</a></p>
+</section>
+
+<style>
+  .card {
+    padding: 1.1rem;
+  }
+  .card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  .card p {
+    margin-bottom: 0.6rem;
+  }
+</style>

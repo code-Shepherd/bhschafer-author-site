@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import LatestSubstack from '../components/LatestSubstack.astro';
+import JournalPreview from '../components/JournalPreview.astro';
+import AboutPreview from '../components/AboutPreview.astro';
+
+const journalPosts = (await getCollection('journal', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title="B. H. Schafer | Author of Speculative Fiction"
+  description="B. H. Schafer writes literary speculative fiction with mythic atmosphere, modern dread, and human stakes."
+>
+  <Hero />
+
+  <section>
+    <h2>Enter the World Between Wonder and Ruin</h2>
+    <p class="prose-blurb">
+      This space is for readers drawn to the speculative and the intimate: stories where myth collides with memory,
+      where unsettling questions are treated with care, and where character remains the center of every storm.
+    </p>
+    <p class="prose-blurb">
+      Expect a restrained dark aesthetic, thoughtful prose, and a steady archive of reflections on fiction, craft, and
+      the architecture of imagination.
+    </p>
+  </section>
+
+  <LatestSubstack />
+  <JournalPreview posts={journalPosts} />
+  <AboutPreview />
+</BaseLayout>
+
+<style>
+  .prose-blurb {
+    max-width: 65ch;
+    color: #d9d3c8;
+  }
+</style>

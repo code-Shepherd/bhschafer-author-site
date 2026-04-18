@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('journal', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<BaseLayout
+  title="Journal | B. H. Schafer"
+  description="Journal entries from B. H. Schafer on writing craft, speculative fiction, and narrative design."
+>
+  <h1>Journal</h1>
+  <p class="meta">Notes on fiction, storytelling craft, mythic structure, and speculative imagination.</p>
+
+  <div class="entries">
+    {posts.map((post) => (
+      <article class="surface entry">
+        <p class="meta">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        <h2><a href={`/journal/${post.slug}/`}>{post.data.title}</a></h2>
+        <p>{post.data.description}</p>
+        {post.data.tags && (
+          <p class="meta">{post.data.tags.join(' · ')}</p>
+        )}
+      </article>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .entries {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .entry {
+    padding: 1.25rem;
+  }
+  .entry h2 {
+    margin: 0.4rem 0;
+    font-size: 1.4rem;
+  }
+</style>

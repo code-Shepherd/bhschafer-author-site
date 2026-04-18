@@ -1,0 +1,42 @@
+---
+import { siteConfig } from '../data/site';
+---
+<section class="hero">
+  <p class="eyebrow">{siteConfig.position}</p>
+  <h1>{siteConfig.name}</h1>
+  <p class="lead">
+    Literary speculative fiction shaped by myth, dread, wonder, and the quiet, necessary defiance of hope.
+  </p>
+  <div class="actions">
+    <a class="button primary" href={siteConfig.substackUrl} target="_blank" rel="noreferrer">Read on Substack</a>
+    <a class="button" href="/journal">Explore Journal</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    margin-top: 2rem;
+    padding: 2.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(160deg, rgba(18, 22, 33, 0.92), rgba(10, 13, 18, 0.88));
+  }
+  .eyebrow {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-gold-soft);
+    font-size: 0.78rem;
+    margin-bottom: 0.6rem;
+  }
+  .lead {
+    max-width: 45ch;
+    font-size: 1.1rem;
+    color: #ddd7cb;
+  }
+  .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+</style>

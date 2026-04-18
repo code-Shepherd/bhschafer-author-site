@@ -1,0 +1,126 @@
+---
+import { siteConfig } from '../data/site';
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/journal', label: 'Journal' },
+  { href: '/contact', label: 'Contact' }
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/images/author-logo.png" alt="B. H. Schafer logo" width="36" height="36" />
+      <span>{siteConfig.name}</span>
+    </a>
+
+    <input id="menu-toggle" class="menu-toggle" type="checkbox" />
+    <label class="menu-button" for="menu-toggle">Menu</label>
+
+    <nav aria-label="Primary" class="site-nav">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li><a href={siteConfig.substackUrl} target="_blank" rel="noreferrer">Substack</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(9, 11, 15, 0.9);
+    border-bottom: 1px solid var(--border);
+    z-index: 5;
+  }
+  .header-inner {
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .menu-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .menu-button {
+    border: 1px solid var(--border);
+    color: var(--accent-gold-soft);
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+  }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1.25rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    min-width: 13rem;
+    padding: 0.35rem;
+  }
+  .menu-toggle:checked ~ .site-nav {
+    display: block;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li a {
+    display: block;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  li a[aria-current='page'],
+  li a:hover {
+    background: rgba(201, 168, 96, 0.14);
+    color: var(--accent-gold-soft);
+  }
+  @media (min-width: 860px) {
+    .menu-button,
+    .menu-toggle {
+      display: none;
+    }
+    .site-nav {
+      display: block;
+      position: static;
+      background: transparent;
+      border: none;
+      min-width: auto;
+      padding: 0;
+    }
+    .site-nav ul {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+    .site-nav li a {
+      padding: 0.4rem 0.75rem;
+    }
+  }
+</style>

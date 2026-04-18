@@ -1,0 +1,38 @@
+---
+import { siteConfig } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© {year} {siteConfig.name}. All rights reserved.</p>
+    <ul>
+      {siteConfig.social.map((item) => (
+        <li><a href={item.url} target="_blank" rel="noreferrer">{item.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    padding: 2rem 0;
+  }
+  .footer-inner {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+  }
+  .footer-inner ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

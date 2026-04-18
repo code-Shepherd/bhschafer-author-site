@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About | B. H. Schafer"
+  description="Learn more about B. H. Schafer, a speculative fiction author writing at the edge of myth, dread, and transformation."
+>
+  <h1>About B. H. Schafer</h1>
+  <div class="grid cols-2">
+    <div class="surface portrait">
+      <img src="/images/brandon-kindred.jpg" alt="Portrait of author B. H. Schafer" />
+    </div>
+
+    <div>
+      <p>
+        B. H. Schafer is a speculative fiction writer exploring the strange, the sublime, and the shadowed edges of
+        the human psyche.
+      </p>
+      <p>
+        His stories blend fantasy, horror, science fiction, and literary sensibility to examine transformation,
+        isolation, and the fragile tension between identity and power.
+      </p>
+      <p>
+        Drawing from a background in computer science and psychology, Schafer writes with structural precision and
+        emotional depth, often centering flawed protagonists who confront impossible choices in mythic, destabilized
+        worlds.
+      </p>
+      <p>
+        He publishes fiction and essays through Substack and uses this site as a curated home for journal reflections,
+        updates, and craft notes for readers who value atmosphere, meaning, and narrative ambition.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 1.25rem;
+  }
+  .portrait {
+    padding: 0.6rem;
+    max-width: 26rem;
+  }
+  .portrait img {
+    border-radius: calc(var(--radius) - 0.15rem);
+  }
+</style>
