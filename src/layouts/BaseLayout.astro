@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import globalStyles from '../styles/global.css?url';
 
 interface Props {
   title: string;
@@ -23,6 +23,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/images/author-logo.png" type="image/png" />
+    <link rel="stylesheet" href={globalStyles} />
+    <slot name="head" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
