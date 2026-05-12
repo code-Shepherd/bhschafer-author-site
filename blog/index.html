@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" href="../images/author-logo.png" type="image/png">
+		<title>The Margins | B. H. Schafer</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Informal notes, updates, publishing thoughts, and reflections from B. H. Schafer.">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload blog-page blog-archive">
+
+		<!-- Wrapper and particles -->
+			<div id="particles-js"></div>
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="fas fa-feather"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>B. H. Schafer</h1>
+								<p>Author of Speculative Fiction</p>
+								<ul class="icons">
+									<li><a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://substack.com/@bhschafer?utm_source=user-menu" target="_blank" rel="noopener noreferrer"><img src="../images/substack.png" alt="Substack" style="width: 24px; height: 24px; vertical-align: middle;" /><span class="label" style="display: none;">Substack</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="../index.html#intro">Intro</a></li>
+								<li><a href="../index.html#work">Works</a></li>
+								<li><a href="../index.html#newsletter">Schafer's Quill</a></li>
+								<li><a href="./">Blog</a></li>
+								<li><a href="../index.html#about">About</a></li>
+								<li><a href="../index.html#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Blog Archive -->
+					<main class="blog-shell" aria-labelledby="blog-title">
+						<section class="blog-panel">
+							<header class="blog-post-header">
+								<h2 id="blog-title" class="major">The Margins</h2>
+								<p>Informal notes from the desk: updates, reflections, publishing thoughts, fragments from the workbench, and other things too alive to be filed neatly.</p>
+							</header>
+
+							<div class="blog-list">
+								<article class="blog-preview">
+									<div class="blog-preview-content">
+										<h3><a href="/blog/first-note-from-the-margins/">First Note from the Margins</a></h3>
+										<p class="blog-date">May 12, 2026</p>
+										<p class="blog-description">A short update on the author site, current projects, and the road ahead.</p>
+									</div>
+									<div class="blog-preview-action">
+										<a href="/blog/first-note-from-the-margins/" class="button">Read &rarr;</a>
+									</div>
+								</article>
+
+								<article class="blog-preview">
+									<div class="blog-preview-content">
+										<h3><a href="#">Writing in the Ruins</a></h3>
+										<p class="blog-date">May 20, 2026</p>
+										<p class="blog-description">Thoughts on building fiction, discipline, beauty, and keeping the work alive while the machinery hums.</p>
+									</div>
+									<div class="blog-preview-action">
+										<a href="#" class="button">Read &rarr;</a>
+									</div>
+								</article>
+
+								<article class="blog-preview">
+									<div class="blog-preview-content">
+										<h3><a href="#">On Parasite and the Monster Within</a></h3>
+										<p class="blog-date">June 3, 2026</p>
+										<p class="blog-description">Notes on psychological horror, identity, guilt, and the strange intimacy of writing a monster.</p>
+									</div>
+									<div class="blog-preview-action">
+										<a href="#" class="button">Read &rarr;</a>
+									</div>
+								</article>
+
+								<article class="blog-preview">
+									<div class="blog-preview-content">
+										<h3><a href="#">Gods, Monsters, and a Fuzzytail</a></h3>
+										<p class="blog-date">June 10, 2026</p>
+										<p class="blog-description">A boy, a monster, and barely any magic in a world where magic is life.</p>
+									</div>
+									<div class="blog-preview-action">
+										<a href="#" class="button">Read &rarr;</a>
+									</div>
+								</article>
+							</div>
+
+							<nav class="pagination" aria-label="Blog archive navigation">
+								<a href="../index.html" class="button">Return Home</a>
+							</nav>
+						</section>
+					</main>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">
+							&copy; <span id="year"></span> | B. H. Schafer | All rights reserved
+						</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				document.getElementById('year').textContent = new Date().getFullYear();
+			</script>
+			<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+			<script>
+				fetch('../particles.json')
+					.then(function(response) { return response.json(); })
+					.then(function(config) {
+						if (config.particles && config.particles.shape && config.particles.shape.image) {
+							config.particles.shape.image.src = '../images/rad-rune.webp';
+						}
+						particlesJS('particles-js', config);
+						console.log('✨ Mystic particles loaded.');
+					});
+			</script>
+
+	</body>
+</html>
