@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			title: "Gods, Monsters, and a Fuzzytail Book I",
 			type: "Novel",
 			stage: "Revision",
-			progress: 35,
-			note: "Chapter 7 of 20 revised."
+			progress: 55,
+			note: "Chapter 11 of 20 revised."
 		},
 		{
 			title: "The God with Two Faces",
