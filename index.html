@@ -11,6 +11,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/tracker.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">			
@@ -478,6 +479,38 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 			</div>
 
+
+		<!-- Trackers -->
+			<div class="tracker-backdrop" data-tracker-close></div>
+
+			<button
+				class="tracker-tab"
+				type="button"
+				aria-controls="tracker-panel"
+				aria-expanded="false"
+			>
+				<span>Trackers</span>
+			</button>
+
+			<aside
+				id="tracker-panel"
+				class="tracker-panel"
+				aria-hidden="true"
+				aria-labelledby="tracker-title"
+			>
+				<header class="tracker-header">
+					<h2 id="tracker-title">Trackers</h2>
+				</header>
+
+				<section class="tracker-focus" aria-label="Current focus">
+					<p class="tracker-focus-label">Primary Focus</p>
+					<h3>Gods, Monsters, and a Fuzzytail Book I</h3>
+					<p>Revision in progress.</p>
+				</section>
+
+				<section class="tracker-list" aria-label="Project trackers"></section>
+			</aside>
+
 		<!-- BG -->
 			<div id="bg"></div>
 
@@ -487,6 +520,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/tracker.js"></script>
 
 			<script>
 				const slides = document.querySelectorAll('.carousel-slide');
