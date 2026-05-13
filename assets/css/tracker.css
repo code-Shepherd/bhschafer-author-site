@@ -1,0 +1,299 @@
+:root {
+	--tracker-gold: var(--gold, #d9c182);
+	--tracker-bg: rgba(18, 24, 29, 0.92);
+	--tracker-panel-width: min(420px, 88vw);
+}
+
+#wrapper {
+	transition: filter 300ms ease, transform 300ms ease, opacity 300ms ease;
+}
+
+body.tracker-open #wrapper {
+	filter: blur(2px) brightness(0.55);
+	transform: translateX(-1.5rem) scale(0.99);
+	opacity: 0.82;
+}
+
+.tracker-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 9500;
+	background: radial-gradient(circle at 70% 50%, rgba(217, 193, 130, 0.08), transparent 32%), rgba(3, 7, 11, 0.48);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 300ms ease;
+}
+
+body.tracker-open .tracker-backdrop {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.tracker-tab {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	z-index: 9800;
+	min-width: 2.75rem;
+	min-height: 8.5rem;
+	padding: 1rem 0.55rem;
+	border: solid 1px var(--tracker-gold);
+	border-right: 0;
+	border-radius: 0.85rem 0 0 0.85rem;
+	background: linear-gradient(180deg, rgba(26, 36, 44, 0.94), rgba(10, 14, 18, 0.88));
+	box-shadow: -0.25rem 0.25rem 1.2rem rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(217, 193, 130, 0.12);
+	color: var(--tracker-gold);
+	cursor: pointer;
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.22rem;
+	line-height: 1;
+	text-transform: uppercase;
+	transform: translateY(-50%);
+	transition: right 300ms ease, background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+}
+
+.tracker-tab span {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+.tracker-tab:hover,
+.tracker-tab:focus-visible {
+	background: linear-gradient(180deg, rgba(39, 51, 59, 0.98), rgba(16, 22, 27, 0.94));
+	box-shadow: -0.25rem 0.25rem 1.4rem rgba(0, 0, 0, 0.42), 0 0 1rem rgba(217, 193, 130, 0.22);
+	color: #fff1c6;
+}
+
+body.tracker-open .tracker-tab {
+	right: var(--tracker-panel-width);
+}
+
+.tracker-panel {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9700;
+	width: var(--tracker-panel-width);
+	height: 100vh;
+	padding: 2.4rem 1.55rem 1.6rem;
+	border-left: solid 1px var(--tracker-gold);
+	background: linear-gradient(145deg, rgba(28, 37, 45, 0.96), var(--tracker-bg));
+	box-shadow: -1.5rem 0 3rem rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(217, 193, 130, 0.18), inset 0 0 2rem rgba(217, 193, 130, 0.04);
+	overflow-y: auto;
+	transform: translateX(100%);
+	transition: transform 300ms ease;
+}
+
+body.tracker-open .tracker-panel {
+	transform: translateX(0);
+}
+
+.tracker-panel::before {
+	content: "";
+	position: absolute;
+	inset: 0.7rem;
+	border: solid 1px rgba(217, 193, 130, 0.22);
+	border-radius: 0.45rem;
+	pointer-events: none;
+}
+
+.tracker-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 1;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	border: solid 1px rgba(217, 193, 130, 0.72);
+	border-radius: 50%;
+	background: rgba(8, 12, 16, 0.34);
+	box-shadow: none;
+	color: var(--tracker-gold) !important;
+	cursor: pointer;
+	font-size: 1.45rem;
+	line-height: 2rem;
+	text-align: center;
+}
+
+.tracker-close:hover,
+.tracker-close:focus-visible {
+	background: rgba(217, 193, 130, 0.12);
+	color: #fff1c6 !important;
+}
+
+.tracker-header,
+.tracker-focus,
+.tracker-list {
+	position: relative;
+	z-index: 1;
+}
+
+.tracker-header {
+	margin-bottom: 1.35rem;
+	padding-right: 2.5rem;
+}
+
+.tracker-kicker,
+.tracker-focus-label,
+.tracker-stage,
+.tracker-note {
+	color: rgba(255, 255, 255, 0.72);
+	font-family: "EB Garamond", Georgia, serif;
+}
+
+.tracker-kicker,
+.tracker-focus-label {
+	margin-bottom: 0.35rem;
+	color: var(--tracker-gold);
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.2rem;
+	text-transform: uppercase;
+}
+
+.tracker-header h2,
+.tracker-focus h3,
+.tracker-card h3 {
+	color: #ffffff;
+	font-family: "Cinzel", Georgia, serif;
+	letter-spacing: 0.08rem;
+}
+
+.tracker-header h2 {
+	margin: 0 0 0.45rem;
+	font-size: 1.65rem;
+}
+
+.tracker-header p:last-child,
+.tracker-focus p:last-child {
+	margin-bottom: 0;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.tracker-focus {
+	margin-bottom: 1.3rem;
+	padding: 1rem;
+	border: solid 1px rgba(217, 193, 130, 0.34);
+	border-radius: 0.5rem;
+	background: rgba(217, 193, 130, 0.07);
+}
+
+.tracker-focus h3 {
+	margin: 0 0 0.45rem;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+
+.tracker-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.tracker-card {
+	padding: 1rem;
+	border: solid 1px rgba(217, 193, 130, 0.28);
+	border-radius: 0.5rem;
+	background: rgba(8, 12, 16, 0.32);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.tracker-card-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 0.55rem;
+}
+
+.tracker-card h3 {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.35;
+}
+
+.tracker-percent {
+	flex: 0 0 auto;
+	color: var(--tracker-gold);
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.tracker-stage {
+	margin: 0 0 0.75rem;
+	font-size: 0.95rem;
+}
+
+.tracker-progress {
+	height: 0.55rem;
+	margin-bottom: 0.75rem;
+	border: solid 1px rgba(217, 193, 130, 0.34);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.08);
+	overflow: hidden;
+}
+
+.tracker-progress span {
+	display: block;
+	height: 100%;
+	border-radius: inherit;
+	background: linear-gradient(90deg, rgba(217, 193, 130, 0.78), var(--tracker-gold));
+	box-shadow: 0 0 0.85rem rgba(217, 193, 130, 0.28);
+}
+
+.tracker-note {
+	margin: 0;
+	font-size: 0.92rem;
+	line-height: 1.45;
+}
+
+@media screen and (max-width: 736px) {
+	:root {
+		--tracker-panel-width: 100vw;
+	}
+
+	body.tracker-open #wrapper {
+		filter: blur(1px) brightness(0.65);
+		transform: translateX(-0.5rem) scale(0.995);
+		opacity: 0.88;
+	}
+
+	.tracker-panel {
+		width: 100vw;
+		padding: 4.75rem 1.15rem 1.35rem;
+	}
+
+	.tracker-tab {
+		top: auto;
+		right: 1rem;
+		bottom: 1rem;
+		min-width: 0;
+		min-height: 0;
+		padding: 0.8rem 1rem;
+		border: solid 1px var(--tracker-gold);
+		border-radius: 999px;
+		font-size: 0.68rem;
+		transform: none;
+	}
+
+	.tracker-tab span {
+		writing-mode: horizontal-tb;
+	}
+
+	body.tracker-open .tracker-tab {
+		right: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#wrapper,
+	.tracker-backdrop,
+	.tracker-tab,
+	.tracker-panel {
+		transition: none;
+	}
+}
