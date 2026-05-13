@@ -81,7 +81,10 @@ body.tracker-open .tracker-tab {
 	border-left: solid 1px var(--tracker-gold);
 	background: linear-gradient(145deg, rgba(28, 37, 45, 0.96), var(--tracker-bg));
 	box-shadow: -1.5rem 0 3rem rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(217, 193, 130, 0.18), inset 0 0 2rem rgba(217, 193, 130, 0.04);
+	color: var(--tracker-gold);
 	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 	transform: translateX(100%);
 	transition: transform 300ms ease;
 }
@@ -99,29 +102,8 @@ body.tracker-open .tracker-panel {
 	pointer-events: none;
 }
 
-.tracker-close {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	z-index: 1;
-	width: 2.25rem;
-	height: 2.25rem;
-	padding: 0;
-	border: solid 1px rgba(217, 193, 130, 0.72);
-	border-radius: 50%;
-	background: rgba(8, 12, 16, 0.34);
-	box-shadow: none;
-	color: var(--tracker-gold) !important;
-	cursor: pointer;
-	font-size: 1.45rem;
-	line-height: 2rem;
-	text-align: center;
-}
-
-.tracker-close:hover,
-.tracker-close:focus-visible {
-	background: rgba(217, 193, 130, 0.12);
-	color: #fff1c6 !important;
+.tracker-panel::-webkit-scrollbar {
+	display: none;
 }
 
 .tracker-header,
@@ -132,60 +114,76 @@ body.tracker-open .tracker-panel {
 }
 
 .tracker-header {
-	margin-bottom: 1.35rem;
-	padding-right: 2.5rem;
+	margin-bottom: 2rem;
+	text-align: center;
 }
 
-.tracker-kicker,
+.tracker-header::after {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 1px;
+	margin: 1.25rem auto 0;
+	background: linear-gradient(90deg, transparent, rgba(217, 193, 130, 0.5), transparent);
+}
+
 .tracker-focus-label,
 .tracker-stage,
 .tracker-note {
-	color: rgba(255, 255, 255, 0.72);
+	color: rgba(217, 193, 130, 0.72);
 	font-family: "EB Garamond", Georgia, serif;
 }
 
-.tracker-kicker,
 .tracker-focus-label {
-	margin-bottom: 0.35rem;
-	color: var(--tracker-gold);
+	margin-bottom: 0.45rem;
+	color: rgba(217, 193, 130, 0.84);
 	font-family: "Cinzel", Georgia, serif;
 	font-size: 0.72rem;
-	font-weight: 600;
+	font-weight: 400;
 	letter-spacing: 0.2rem;
+	text-align: center;
 	text-transform: uppercase;
 }
 
 .tracker-header h2,
 .tracker-focus h3,
 .tracker-card h3 {
-	color: #ffffff;
-	font-family: "Cinzel", Georgia, serif;
-	letter-spacing: 0.08rem;
+	color: var(--tracker-gold);
 }
 
 .tracker-header h2 {
-	margin: 0 0 0.45rem;
+	margin: 0;
+	font-family: 'IM Fell English SC', serif;
 	font-size: 1.65rem;
+	font-weight: 400;
+	letter-spacing: 0.55rem;
+	line-height: 1.2;
+	text-transform: uppercase;
 }
 
-.tracker-header p:last-child,
 .tracker-focus p:last-child {
 	margin-bottom: 0;
-	color: rgba(255, 255, 255, 0.72);
+	color: rgba(217, 193, 130, 0.72);
+	text-align: center;
 }
 
 .tracker-focus {
 	margin-bottom: 1.3rem;
-	padding: 1rem;
+	padding: 1.5rem 1.25rem;
 	border: solid 1px rgba(217, 193, 130, 0.34);
 	border-radius: 0.5rem;
 	background: rgba(217, 193, 130, 0.07);
+	text-align: center;
 }
 
 .tracker-focus h3 {
 	margin: 0 0 0.45rem;
+	font-family: "Cinzel", Georgia, serif;
 	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.08rem;
 	line-height: 1.4;
+	text-align: center;
 }
 
 .tracker-list {
@@ -198,7 +196,8 @@ body.tracker-open .tracker-panel {
 	border: solid 1px rgba(217, 193, 130, 0.28);
 	border-radius: 0.5rem;
 	background: rgba(8, 12, 16, 0.32);
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+	box-shadow: inset 0 0 0 1px rgba(217, 193, 130, 0.05);
+	color: rgba(217, 193, 130, 0.78);
 }
 
 .tracker-card-top {
@@ -211,7 +210,10 @@ body.tracker-open .tracker-panel {
 
 .tracker-card h3 {
 	margin: 0;
+	font-family: "Cinzel", Georgia, serif;
 	font-size: 0.95rem;
+	font-weight: 400;
+	letter-spacing: 0.08rem;
 	line-height: 1.35;
 }
 
@@ -220,11 +222,12 @@ body.tracker-open .tracker-panel {
 	color: var(--tracker-gold);
 	font-family: "Cinzel", Georgia, serif;
 	font-size: 0.9rem;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .tracker-stage {
 	margin: 0 0 0.75rem;
+	color: rgba(217, 193, 130, 0.74);
 	font-size: 0.95rem;
 }
 
@@ -233,7 +236,7 @@ body.tracker-open .tracker-panel {
 	margin-bottom: 0.75rem;
 	border: solid 1px rgba(217, 193, 130, 0.34);
 	border-radius: 999px;
-	background: rgba(255, 255, 255, 0.08);
+	background: rgba(217, 193, 130, 0.1);
 	overflow: hidden;
 }
 
@@ -247,6 +250,7 @@ body.tracker-open .tracker-panel {
 
 .tracker-note {
 	margin: 0;
+	color: rgba(217, 193, 130, 0.66);
 	font-size: 0.92rem;
 	line-height: 1.45;
 }
