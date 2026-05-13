@@ -2,18 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
 	const trackers = [
 		{
 			title: "Gods, Monsters, and a Fuzzytail Book I",
+			type: "Novel",
 			stage: "Revision",
 			progress: 35,
 			note: "Chapter 7 of 20 revised."
 		},
 		{
 			title: "The God with Two Faces",
+			type: "Essay",
 			stage: "Drafting",
 			progress: 75,
 			note: "Beginning paragraph 7 of 8."
 		},
 		{
 			title: "Sea Beast",
+			type: "Short Story",
 			stage: "Drafting",
 			progress: 30,
 			note: "Tentative title. About 30% through the draft."
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			const cardTop = document.createElement('div');
 			const title = document.createElement('h3');
 			const percent = document.createElement('span');
-			const stage = document.createElement('p');
+			const meta = document.createElement('p');
 			const progressBar = document.createElement('div');
 			const progressFill = document.createElement('span');
 			const note = document.createElement('p');
@@ -52,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			card.className = 'tracker-card';
 			cardTop.className = 'tracker-card-top';
 			percent.className = 'tracker-percent';
-			stage.className = 'tracker-stage';
+			meta.className = 'tracker-meta';
 			progressBar.className = 'tracker-progress';
 			note.className = 'tracker-note';
 
 			title.textContent = tracker.title;
 			percent.textContent = progress + '%';
-			stage.textContent = 'Stage: ' + tracker.stage;
+			meta.textContent = tracker.type + ' · ' + tracker.stage;
 			progressBar.setAttribute('aria-label', progress + '% complete');
 			progressFill.style.width = progress + '%';
 			note.textContent = '• ' + tracker.note;
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			cardTop.appendChild(percent);
 			progressBar.appendChild(progressFill);
 			card.appendChild(cardTop);
-			card.appendChild(stage);
+			card.appendChild(meta);
 			card.appendChild(progressBar);
 			card.appendChild(note);
 			fragment.appendChild(card);
