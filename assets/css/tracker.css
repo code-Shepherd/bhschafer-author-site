@@ -66,6 +66,20 @@ body.tracker-open .tracker-backdrop {
 	color: #fff1c6;
 }
 
+/* Protect tracker tab from global button hover styles. */
+.tracker-tab,
+.tracker-tab:hover,
+.tracker-tab:focus,
+.tracker-tab:focus-visible {
+	color: var(--tracker-gold) !important;
+}
+
+.tracker-tab:hover,
+.tracker-tab:focus-visible {
+	background: linear-gradient(180deg, rgba(39, 51, 59, 0.98), rgba(16, 22, 27, 0.94));
+	color: #fff1c6 !important;
+}
+
 body.tracker-open .tracker-tab {
 	right: var(--tracker-panel-width);
 }
