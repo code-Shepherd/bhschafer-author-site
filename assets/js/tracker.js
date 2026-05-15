@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			type: "Platform",
 			stage: "Writing",
 			progress: 5,
-			note: "Drafting second essay"
+			note: "Drafting second essay (The God with Two Faces)"
 		},
 		{
 			title: "The God with Two Faces",
