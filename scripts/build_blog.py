@@ -449,11 +449,11 @@ def write_blog_pages(posts: list[BlogPost]) -> None:
     if not TEMPLATE_PATH.exists():
         fail(f"template file is missing: {TEMPLATE_PATH}")
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
-    posts_sorted = sorted(posts, key=lambda post: post.date, reverse=True)
+    posts_chronological = sorted(posts, key=lambda post: post.date)
 
-    for index, post in enumerate(posts_sorted):
-        previous_post = posts_sorted[index - 1] if index > 0 else None
-        next_post = posts_sorted[index + 1] if index < len(posts_sorted) - 1 else None
+    for index, post in enumerate(posts_chronological):
+        previous_post = posts_chronological[index - 1] if index > 0 else None
+        next_post = posts_chronological[index + 1] if index < len(posts_chronological) - 1 else None
         adjacent_posts = build_adjacent_posts_nav(previous_post, next_post)
         output_dir = safe_blog_dir_for_slug(post.slug)
         output_dir.mkdir(parents=True, exist_ok=True)
