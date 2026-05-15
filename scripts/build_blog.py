@@ -367,7 +367,47 @@ def delete_previous_generated_pages() -> list[str]:
     return deleted
 
 
-def render_template(template: str, post: BlogPost) -> str:
+def build_adjacent_posts_nav(previous_post: BlogPost | None, next_post: BlogPost | None) -> str:
+    if not previous_post and not next_post:
+        return ""
+
+    links: list[str] = []
+    if previous_post:
+        links.append(
+            '\t\t\t\t\t\t\t<nav class="blog-adjacent-nav" aria-label="Adjacent blog posts">'
+        )
+        links.append(
+            '\t\t\t\t\t\t\t\t<a class="blog-adjacent-link blog-adjacent-previous" '
+            f'href="{escape(previous_post.url, quote=True)}">'
+        )
+        links.append('\t\t\t\t\t\t\t\t\t<span class="blog-adjacent-label">← Previous</span>')
+        links.append(
+            '\t\t\t\t\t\t\t\t\t<span class="blog-adjacent-title">'
+            f'{escape(previous_post.title)}</span>'
+        )
+        links.append('\t\t\t\t\t\t\t\t</a>')
+    else:
+        links.append(
+            '\t\t\t\t\t\t\t<nav class="blog-adjacent-nav" aria-label="Adjacent blog posts">'
+        )
+
+    if next_post:
+        links.append(
+            '\t\t\t\t\t\t\t\t<a class="blog-adjacent-link blog-adjacent-next" '
+            f'href="{escape(next_post.url, quote=True)}">'
+        )
+        links.append('\t\t\t\t\t\t\t\t\t<span class="blog-adjacent-label">Next →</span>')
+        links.append(
+            '\t\t\t\t\t\t\t\t\t<span class="blog-adjacent-title">'
+            f'{escape(next_post.title)}</span>'
+        )
+        links.append('\t\t\t\t\t\t\t\t</a>')
+
+    links.append('\t\t\t\t\t\t\t</nav>')
+    return "\n".join(links)
+
+
+def render_template(template: str, post: BlogPost, adjacent_posts: str = "") -> str:
     canonical_link = ""
     if post.canonical_url:
         canonical_link = f'<link rel="canonical" href="{escape(post.canonical_url, quote=True)}">'
@@ -396,6 +436,7 @@ def render_template(template: str, post: BlogPost) -> str:
         "{{ canonical_url }}": canonical_link,
         "{{ cover_image }}": cover_markup,
         "{{ cover_alt }}": escape(post.cover_alt, quote=True),
+        "{{ adjacent_posts }}": adjacent_posts,
     }
 
     rendered = template
@@ -408,11 +449,18 @@ def write_blog_pages(posts: list[BlogPost]) -> None:
     if not TEMPLATE_PATH.exists():
         fail(f"template file is missing: {TEMPLATE_PATH}")
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
+    posts_sorted = sorted(posts, key=lambda post: post.date, reverse=True)
 
-    for post in posts:
+    for index, post in enumerate(posts_sorted):
+        previous_post = posts_sorted[index - 1] if index > 0 else None
+        next_post = posts_sorted[index + 1] if index < len(posts_sorted) - 1 else None
+        adjacent_posts = build_adjacent_posts_nav(previous_post, next_post)
         output_dir = safe_blog_dir_for_slug(post.slug)
         output_dir.mkdir(parents=True, exist_ok=True)
-        (output_dir / "index.html").write_text(render_template(template, post), encoding="utf-8")
+        (output_dir / "index.html").write_text(
+            render_template(template, post, adjacent_posts),
+            encoding="utf-8",
+        )
 
 
 def render_archive_card(post: BlogPost) -> str:
