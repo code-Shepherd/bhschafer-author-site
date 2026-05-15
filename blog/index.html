@@ -55,18 +55,43 @@
 								<p>Informal notes and official correspondence from the desk of B. H. Schafer: updates, reflections, publishing thoughts, fragments from the workbench</p>
 							</header>
 
-							<div class="blog-list">
+							<section class="blog-controls" aria-label="Blog controls">
+								<input
+									id="blog-search"
+									type="search"
+									placeholder="Search posts by title..."
+									aria-label="Search blog posts by title"
+								/>
+
+								<select id="category-filter" aria-label="Filter posts by category">
+									<option value="all">All Categories</option>
+								</select>
+
+								<select id="sort-posts" aria-label="Sort posts">
+									<option value="newest">Newest First</option>
+									<option value="oldest">Oldest First</option>
+								</select>
+							</section>
+
+							<div id="blog-list" class="blog-list">
+								<!-- BLOG_POSTS_START -->
 								<article class="blog-preview">
 									<div class="blog-preview-content">
 										<h3><a href="/blog/hello-world/">Hello World</a></h3>
 										<p class="blog-date">May 12, 2026</p>
 										<p class="blog-description">First ever blog post on my personal site!</p>
+										<p class="blog-category">Update</p>
 									</div>
 									<div class="blog-preview-action">
 										<a href="/blog/hello-world/" class="button">Read &rarr;</a>
 									</div>
 								</article>
+							<!-- BLOG_POSTS_END -->
 							</div>
+
+							<p id="blog-empty-state" class="blog-empty-state" hidden>
+								No posts found.
+							</p>
 
 							<nav class="pagination" aria-label="Blog archive navigation">
 								<a href="../index.html" class="button">Return Home</a>
@@ -93,6 +118,7 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 			<script src="../assets/js/subpage-nav.js"></script>
+			<script src="../assets/js/blog.js"></script>
 			<script>
 				document.getElementById('year').textContent = new Date().getFullYear();
 			</script>
