@@ -1922,6 +1922,83 @@ input, select, textarea {
 		padding: 2.5rem;
 	}
 
+
+	.blog-controls {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		gap: 0.85rem;
+		margin-top: 2rem;
+	}
+
+	.blog-controls input,
+	.blog-controls select {
+		background: rgba(0, 0, 0, 0.18);
+		border: solid 1px rgba(217, 193, 130, 0.45);
+		border-radius: 0.35rem;
+		color: var(--gold);
+		height: 2.75rem;
+		letter-spacing: 0.05rem;
+		padding: 0 1rem;
+	}
+
+	.blog-controls input {
+		-moz-flex: 1 1 18rem;
+		-webkit-flex: 1 1 18rem;
+		-ms-flex: 1 1 18rem;
+		flex: 1 1 18rem;
+	}
+
+	.blog-controls select {
+		-moz-flex: 0 1 12rem;
+		-webkit-flex: 0 1 12rem;
+		-ms-flex: 0 1 12rem;
+		flex: 0 1 12rem;
+	}
+
+	.blog-controls input:focus,
+	.blog-controls select:focus {
+		border-color: var(--gold);
+		box-shadow: 0 0 0 1px var(--gold);
+		outline: none;
+	}
+
+	.blog-controls input::placeholder {
+		color: rgba(217, 193, 130, 0.68);
+	}
+
+	.blog-category,
+	.blog-updated {
+		font-size: 0.78rem;
+		letter-spacing: 0.12rem;
+		margin: 0.85rem 0 0;
+		opacity: 0.86;
+		text-transform: uppercase;
+	}
+
+	.blog-cover {
+		margin: 0 0 2rem;
+	}
+
+	.blog-cover img {
+		border: solid 1px rgba(217, 193, 130, 0.35);
+		border-radius: 0.35rem;
+		display: block;
+		width: 100%;
+	}
+
+	.blog-empty-state {
+		border-top: solid 1px rgba(217, 193, 130, 0.35);
+		margin: 2rem 0 0;
+		padding-top: 1.75rem;
+		text-align: center;
+	}
+
 	.blog-list {
 		margin-top: 2rem;
 	}
@@ -2116,6 +2193,13 @@ input, select, textarea {
 		.blog-post {
 			padding: 1.5rem;
 		}
+
+		.blog-controls,
+		.blog-controls input,
+		.blog-controls select {
+			width: 100%;
+		}
+
 
 		.blog-preview {
 			display: block;

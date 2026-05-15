@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Hello World",
+    "slug": "hello-world",
+    "date": "2026-05-12",
+    "displayDate": "May 12, 2026",
+    "updated": "",
+    "displayUpdated": "",
+    "description": "First ever blog post on my personal site!",
+    "author": "B. H. Schafer",
+    "category": "Update",
+    "tags": [
+      "welcome",
+      "site news"
+    ],
+    "coverImage": "",
+    "coverAlt": "",
+    "canonicalUrl": "",
+    "url": "/blog/hello-world/"
+  }
+]
