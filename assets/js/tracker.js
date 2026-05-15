@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			note: "15 Chapters of 20 revised."
 		},
 		{
+			title: "Youtube Channel Launch",
+			type: "Platform",
+			stage: "Writing",
+			progress: 5,
+			note: "Drafting second essay"
+		},
+		{
 			title: "The God with Two Faces",
 			type: "Essay",
 			stage: "Drafting",
