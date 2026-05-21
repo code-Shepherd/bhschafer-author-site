@@ -11,15 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			title: "Youtube Channel Launch",
 			type: "Platform",
 			stage: "Writing",
-			progress: 5,
-			note: "Drafting second essay (The God with Two Faces)"
+			progress: 10,
+			note: "planning essays 3 and 4"
 		},
 		{
 			title: "The God with Two Faces",
 			type: "Essay",
 			stage: "Drafting",
-			progress: 75,
-			note: "Beginning paragraph 7 of 8."
+			progress: 100,
+			note: "First Draft Complete"
 		},
 		{
 			title: "Sea Beast",
