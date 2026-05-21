@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			title: "Gods, Monsters, and a Fuzzytail Book I",
 			type: "Novel",
 			stage: "Revision",
-			progress: 72,
-			note: "15 Chapters of 20 revised."
+			progress: 100,
+			note: "all 20 chaps revised, re-write imminent"
 		},
 		{
 			title: "Youtube Channel Launch",
