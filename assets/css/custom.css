@@ -48,3 +48,70 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+/* Homepage newsletter ribbon */
+.newsletter-ribbon {
+	width: min(44rem, calc(100vw - 2rem));
+	margin: 0 auto 1.75rem;
+	padding: 0.7rem 0.9rem;
+	border: solid 1px rgba(217, 193, 130, 0.45);
+	border-radius: 999px;
+	background: rgba(18, 24, 29, 0.72);
+	box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(217, 193, 130, 0.08);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+}
+
+.newsletter-ribbon p {
+	margin: 0;
+	font-size: 0.82rem;
+	line-height: 1.4;
+}
+
+.newsletter-ribbon a {
+	color: inherit;
+}
+
+.newsletter-ribbon p a {
+	color: var(--gold, #d9c182);
+	text-decoration: none;
+}
+
+.newsletter-ribbon .button {
+	flex: 0 0 auto;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	padding: 0 1rem;
+	font-size: 0.7rem;
+}
+
+body.is-article-visible .newsletter-ribbon {
+	transform: scale(0.95);
+	filter: blur(0.1rem);
+	opacity: 0;
+	pointer-events: none;
+}
+
+body.is-preload .newsletter-ribbon {
+	filter: blur(0.125rem);
+	opacity: 0;
+}
+
+@media screen and (max-width: 736px) {
+	.newsletter-ribbon {
+		width: min(100%, calc(100vw - 2rem));
+		border-radius: 0.75rem;
+		flex-direction: column;
+		align-items: stretch;
+		text-align: center;
+	}
+
+	.newsletter-ribbon .button {
+		width: 100%;
+	}
+}
