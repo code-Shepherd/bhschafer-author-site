@@ -1698,36 +1698,25 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-/* short stories carousel */
-	.carousel-wrapper {
-		position: relative;
-		width: 100%;
-		height: 430px;
-		margin-bottom: 2em;
-	}
-
-	.carousel-slide {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		padding: 1em;
+/* Works */
+	.story {
 		text-align: center;
-		opacity: 0;
-		transition: opacity 1s ease-in-out;
-		z-index: 0;
 	}
 
-	.carousel-slide.active {
-		opacity: 1;
-		z-index: 1;
+	.work-credit,
+	.featured-wip {
+		margin-bottom: 3rem;
 	}
 
-	.carousel-slide img {
-		max-height: 260px;
-		width: auto;
+	.work-credit img,
+	.featured-wip img {
+		border-radius: 5%;
 		margin-bottom: 1em;
-		border-radius: 6px;
+	}
+
+	.work-credit .button,
+	.featured-wip .button {
+		margin-top: 0.5rem;
 	}
 
 	.story img.small-img {
