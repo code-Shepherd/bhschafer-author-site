@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" href="../images/author-logo.png" type="image/png">
+		<title>Press Kit | B. H. Schafer</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Press kit for B. H. Schafer, Jamaican speculative and literary fiction writer. Includes author bios, credits, social links, and contact information.">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload blog-page press-kit-page">
+
+		<!-- Wrapper and particles -->
+			<div id="particles-js"></div>
+			<header class="subpage-topbar">
+				<a class="subpage-brand" href="../index.html">B. H. Schafer</a>
+
+				<nav class="subpage-nav" aria-label="Main navigation">
+					<a href="../index.html">Home</a>
+					<a href="../index.html#about">About</a>
+					<a href="../index.html#contact">Contact</a>
+				</nav>
+
+				<ul class="subpage-socials" aria-label="Social links">
+					<li>
+						<a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer" class="icon brands fa-twitter">
+							<span class="label">Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram">
+							<span class="label">Instagram</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://substack.com/@bhschafer?utm_source=user-menu" target="_blank" rel="noopener noreferrer" class="subpage-substack">
+							Substack
+						</a>
+					</li>
+				</ul>
+			</header>
+			<div id="wrapper">
+
+				<!-- Press Kit -->
+					<main class="blog-shell press-kit-shell" aria-labelledby="press-kit-title">
+						<section class="blog-panel press-kit-panel">
+							<header class="blog-post-header">
+								<h2 id="press-kit-title" class="major">Press Kit</h2>
+								<p>Author bios, credits, links, and contact information for B. H. Schafer.</p>
+							</header>
+
+							<section class="press-kit-section">
+								<h3>Medium Bio</h3>
+								<p>B. H. Schafer is a Computer Science graduate, speculative and literary fiction writer, and the voice behind <em>Schafer's Quill.</em> His short stories have appeared in PREE Literary Magazine. When he's not wrestling with daemons in the machine, he's etching words onto the page. He lives in Jamaica, beneath a highway, much to his chagrin.</p>
+							</section>
+
+							<section class="press-kit-section">
+								<h3>Short Bio</h3>
+								<p>B. H. Schafer is a Jamaican speculative and literary fiction writer, Computer Science graduate, and the voice behind <em>Schafer’s Quill</em>.</p>
+							</section>
+
+							<section class="press-kit-section">
+								<h3>Credits</h3>
+								<div class="press-kit-card">
+									<h4>The Clouds Used to Be Grand</h4>
+									<p>Published in <em>PREE Literary Magazine</em>.</p>
+									<p><a href="https://preelit.com/2026/03/18/the-clouds-used-to-be-grand/" target="_blank" rel="noopener noreferrer" class="button">Read at PREE</a></p>
+								</div>
+							</section>
+
+							<section class="press-kit-section">
+								<h3>Social Media</h3>
+								<ul class="alt">
+									<li>Substack: <a href="https://substack.com/@bhschafer" target="_blank" rel="noopener noreferrer">@bhschafer</a></li>
+									<li>X / Twitter: <a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer">@_bhschafer</a></li>
+									<li>Instagram: <a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer">@bhschafer_writes</a></li>
+								</ul>
+							</section>
+
+							<section class="press-kit-section">
+								<h3>Contact</h3>
+								<p>Email: <a href="mailto:contact@bhschafer.com">contact@bhschafer.com</a></p>
+							</section>
+
+							<p class="section-action">
+								<a href="../index.html#about" class="button">Return to About</a>
+							</p>
+						</section>
+					</main>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">
+							&copy; <span id="year"></span> | B. H. Schafer | All rights reserved
+						</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/subpage-nav.js"></script>
+			<script>
+				document.getElementById('year').textContent = new Date().getFullYear();
+			</script>
+			<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+			<script>
+				fetch('../particles.json')
+					.then(function(response) { return response.json(); })
+					.then(function(config) {
+						if (config.particles && config.particles.shape && config.particles.shape.image) {
+							config.particles.shape.image.src = '../images/rad-rune.webp';
+						}
+						particlesJS('particles-js', config);
+					});
+			</script>
+
+	</body>
+</html>

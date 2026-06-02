@@ -48,3 +48,23 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+.press-kit-section {
+	margin-top: 2rem;
+}
+
+.press-kit-section h3 {
+	margin-bottom: 0.75rem;
+}
+
+.press-kit-card {
+	border: solid 1px rgba(255, 255, 255, 0.25);
+	border-radius: 0.35rem;
+	padding: 1.25rem;
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.section-action {
+	text-align: center;
+	margin-top: 2rem;
+}
