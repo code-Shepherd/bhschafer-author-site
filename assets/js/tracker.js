@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		{
 			title: "Gods, Monsters, and a Fuzzytail Book I",
 			type: "Novel",
-			stage: "Re-written",
+			stage: "Re-write",
 			progress: 5,
 			note: "Chapter 1 re-written"
 		},
