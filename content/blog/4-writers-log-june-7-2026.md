@@ -81,7 +81,7 @@ There are pros and cons for either choice.
 
 If there’s a path that any of you readers would like me to go, feel free to reach out via the contact page and let me know.
 
-[→ Contact Page](https://bhschafer.com/#contact)
+[→ Contact Page](https://bhschafer.com/contact/)
 
 That’s about all there is for today.
 

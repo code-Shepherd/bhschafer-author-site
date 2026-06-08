@@ -1,15 +1,18 @@
-#intro .recommendation-section {
+#intro .recommendation-section,
+.content-panel .recommendation-section {
 	margin-top: 2rem;
 }
 
-#intro .recommendation-grid {
+#intro .recommendation-grid,
+.content-panel .recommendation-grid {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
 	margin: 1.25rem 0 2rem;
 }
 
-#intro .recommendation-card {
+#intro .recommendation-card,
+.content-panel .recommendation-card {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -19,32 +22,38 @@
 	background: rgba(255, 255, 255, 0.035);
 }
 
-#intro .recommendation-card h4 {
+#intro .recommendation-card h4,
+.content-panel .recommendation-card h4 {
 	margin-bottom: 0.75rem;
 }
 
-#intro .recommendation-card p {
+#intro .recommendation-card p,
+.content-panel .recommendation-card p {
 	margin-bottom: 1rem;
 }
 
-#intro .recommendation-card .button {
+#intro .recommendation-card .button,
+.content-panel .recommendation-card .button {
 	align-self: flex-start;
 	margin-bottom: 0;
 }
 
-#intro .substack-embed-wrapper {
+#intro .substack-embed-wrapper,
+.content-panel .substack-embed-wrapper {
 	display: flex;
 	justify-content: center;
 	margin-top: 1.5rem;
 	overflow: hidden;
 }
 
-#intro .substack-embed-wrapper iframe {
+#intro .substack-embed-wrapper iframe,
+.content-panel .substack-embed-wrapper iframe {
 	max-width: 100%;
 }
 
 @media screen and (min-width: 736px) {
-	#intro .recommendation-grid {
+	#intro .recommendation-grid,
+	.content-panel .recommendation-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
