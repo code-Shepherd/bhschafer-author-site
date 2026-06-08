@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		{
 			title: "Gods, Monsters, and a Fuzzytail Book I",
 			type: "Novel",
-			stage: "Revision",
-			progress: 100,
-			note: "all 20 chaps revised, re-write imminent"
+			stage: "Re-written",
+			progress: 5,
+			note: "Chapter 1 re-written"
 		},
 		{
 			title: "Youtube Channel Launch",
@@ -15,18 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			note: "planning essays 3 and 4"
 		},
 		{
-			title: "The God with Two Faces",
-			type: "Essay",
-			stage: "Drafting",
-			progress: 100,
-			note: "First Draft Complete"
-		},
-		{
 			title: "Sea Beast",
 			type: "Short Story",
 			stage: "Drafting",
 			progress: 30,
-			note: "Tentative title. About 30% through the draft."
+			note: "Tentative title. About 30% through the rough draft."
 		}
 	];
 
