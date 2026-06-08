@@ -79,7 +79,23 @@ document.addEventListener('DOMContentLoaded', function() {
 		trackerList.replaceChildren(fragment);
 	}
 
+	function closeActivity() {
+		const activityTab = document.querySelector('.activity-tab');
+		const activityPanel = document.getElementById('activity-panel');
+
+		body.classList.remove('activity-open');
+
+		if (activityTab) {
+			activityTab.setAttribute('aria-expanded', 'false');
+		}
+
+		if (activityPanel) {
+			activityPanel.setAttribute('aria-hidden', 'true');
+		}
+	}
+
 	function openTracker() {
+		closeActivity();
 		body.classList.add('tracker-open');
 		tab.setAttribute('aria-expanded', 'true');
 		panel.setAttribute('aria-hidden', 'false');

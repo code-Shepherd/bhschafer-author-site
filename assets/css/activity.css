@@ -1,0 +1,299 @@
+:root {
+	--activity-gold: var(--gold, #d9c182);
+	--activity-bg: rgba(18, 24, 29, 0.92);
+	--activity-panel-width: min(420px, 88vw);
+}
+
+body.activity-open #wrapper {
+	filter: blur(2px) brightness(0.55);
+	transform: translateX(1.5rem) scale(0.99);
+	opacity: 0.82;
+}
+
+.activity-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 9500;
+	background: radial-gradient(circle at 30% 50%, rgba(217, 193, 130, 0.08), transparent 32%), rgba(3, 7, 11, 0.48);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 300ms ease;
+}
+
+body.activity-open .activity-backdrop {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.activity-tab {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	z-index: 9800;
+	min-width: 2.75rem;
+	min-height: 8.5rem;
+	padding: 1rem 0.55rem;
+	border: solid 1px var(--activity-gold);
+	border-left: 0;
+	border-radius: 0 0.85rem 0.85rem 0;
+	background: linear-gradient(180deg, rgba(26, 36, 44, 0.94), rgba(10, 14, 18, 0.88));
+	box-shadow: 0.25rem 0.25rem 1.2rem rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(217, 193, 130, 0.12);
+	color: var(--activity-gold);
+	cursor: pointer;
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.22rem;
+	line-height: 1;
+	text-transform: uppercase;
+	transform: translateY(-50%);
+	transition: left 300ms ease, background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+}
+
+.activity-tab span {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	transform: rotate(180deg);
+}
+
+.activity-tab:hover,
+.activity-tab:focus-visible {
+	background: linear-gradient(180deg, rgba(39, 51, 59, 0.98), rgba(16, 22, 27, 0.94));
+	box-shadow: 0.25rem 0.25rem 1.4rem rgba(0, 0, 0, 0.42), 0 0 1rem rgba(217, 193, 130, 0.22);
+	color: #fff1c6 !important;
+}
+
+/* Protect activity tab from global button hover styles. */
+.activity-tab,
+.activity-tab:hover,
+.activity-tab:focus,
+.activity-tab:focus-visible {
+	color: var(--activity-gold) !important;
+}
+
+body.activity-open .activity-tab {
+	left: var(--activity-panel-width);
+}
+
+.activity-panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9700;
+	width: var(--activity-panel-width);
+	height: 100vh;
+	padding: 2.4rem 1.55rem 1.6rem;
+	border-right: solid 1px var(--activity-gold);
+	background: linear-gradient(215deg, rgba(28, 37, 45, 0.96), var(--activity-bg));
+	box-shadow: 1.5rem 0 3rem rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(217, 193, 130, 0.18), inset 0 0 2rem rgba(217, 193, 130, 0.04);
+	color: var(--activity-gold);
+	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	transform: translateX(-100%);
+	transition: transform 300ms ease;
+}
+
+body.activity-open .activity-panel {
+	transform: translateX(0);
+}
+
+.activity-panel::-webkit-scrollbar {
+	display: none;
+}
+
+.activity-header,
+.activity-tabs,
+.activity-list {
+	position: relative;
+	z-index: 1;
+}
+
+.activity-header {
+	margin-bottom: 1.35rem;
+	text-align: center;
+}
+
+.activity-header::after {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 1px;
+	margin: 1.25rem auto 0;
+	background: linear-gradient(90deg, transparent, rgba(217, 193, 130, 0.5), transparent);
+}
+
+.activity-header h2,
+.activity-card h3 {
+	color: var(--activity-gold);
+}
+
+.activity-header h2 {
+	margin: 0;
+	font-family: 'IM Fell English SC', serif;
+	font-size: 1.65rem;
+	font-weight: 400;
+	letter-spacing: 0.55rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.activity-header p {
+	margin: 0.85rem 0 0;
+	color: rgba(217, 193, 130, 0.72);
+	font-family: "EB Garamond", Georgia, serif;
+	font-size: 0.95rem;
+	line-height: 1.45;
+}
+
+.activity-tabs {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.25rem;
+	margin-bottom: 1.2rem;
+	padding: 0.25rem;
+	border: solid 1px rgba(217, 193, 130, 0.28);
+	border-radius: 999px;
+	background: rgba(8, 12, 16, 0.32);
+	box-shadow: inset 0 0 0 1px rgba(217, 193, 130, 0.05);
+}
+
+.activity-source-tab {
+	min-width: 0;
+	height: auto;
+	padding: 0.55rem 0.8rem;
+	border: 0;
+	border-radius: 999px;
+	background: transparent;
+	box-shadow: none;
+	color: rgba(217, 193, 130, 0.72) !important;
+	cursor: pointer;
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.68rem;
+	font-weight: 600;
+	letter-spacing: 0.16rem;
+	line-height: 1;
+	text-transform: uppercase;
+	transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.activity-source-tab:hover,
+.activity-source-tab:focus-visible,
+.activity-source-tab.is-active {
+	background: rgba(217, 193, 130, 0.14);
+	box-shadow: inset 0 0 0 1px rgba(217, 193, 130, 0.28), 0 0 0.85rem rgba(217, 193, 130, 0.1);
+	color: #fff1c6 !important;
+}
+
+.activity-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.activity-card,
+.activity-status {
+	padding: 1rem;
+	border: solid 1px rgba(217, 193, 130, 0.28);
+	border-radius: 0.5rem;
+	background: rgba(8, 12, 16, 0.32);
+	box-shadow: inset 0 0 0 1px rgba(217, 193, 130, 0.05);
+	color: rgba(217, 193, 130, 0.78);
+}
+
+.activity-card h3 {
+	margin: 0 0 0.55rem;
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.95rem;
+	font-weight: 400;
+	letter-spacing: 0.08rem;
+	line-height: 1.35;
+}
+
+.activity-card-meta,
+.activity-card-excerpt,
+.activity-status {
+	font-family: "EB Garamond", Georgia, serif;
+}
+
+.activity-card-meta {
+	margin: 0 0 0.65rem;
+	color: rgba(217, 193, 130, 0.82);
+	font-size: 0.78rem;
+	letter-spacing: 0.08rem;
+}
+
+.activity-card-excerpt {
+	margin: 0 0 0.9rem;
+	color: rgba(217, 193, 130, 0.68);
+	font-size: 0.92rem;
+	line-height: 1.45;
+}
+
+.activity-card-link {
+	display: inline-block;
+	border-bottom-color: rgba(217, 193, 130, 0.45);
+	color: var(--activity-gold);
+	font-family: "Cinzel", Georgia, serif;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.14rem;
+	text-transform: uppercase;
+}
+
+.activity-card-link:hover,
+.activity-card-link:focus-visible {
+	border-bottom-color: transparent;
+	color: #fff1c6 !important;
+}
+
+.activity-status {
+	margin: 0;
+	text-align: center;
+}
+
+@media screen and (max-width: 736px) {
+	:root {
+		--activity-panel-width: 100vw;
+	}
+
+	body.activity-open #wrapper {
+		filter: blur(1px) brightness(0.65);
+		transform: translateX(0.5rem) scale(0.995);
+		opacity: 0.88;
+	}
+
+	.activity-panel {
+		width: 100vw;
+		padding: 4.75rem 1.15rem 1.35rem;
+	}
+
+	.activity-tab {
+		top: auto;
+		left: 1rem;
+		bottom: 1rem;
+		min-width: 0;
+		min-height: 0;
+		padding: 0.8rem 1rem;
+		border: solid 1px var(--activity-gold);
+		border-radius: 999px;
+		font-size: 0.68rem;
+		transform: none;
+	}
+
+	.activity-tab span {
+		writing-mode: horizontal-tb;
+		transform: none;
+	}
+
+	body.activity-open .activity-tab {
+		left: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.activity-backdrop,
+	.activity-tab,
+	.activity-panel {
+		transition: none;
+	}
+}
