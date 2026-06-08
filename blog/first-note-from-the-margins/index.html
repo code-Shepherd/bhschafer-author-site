@@ -17,35 +17,37 @@
 	<body class="is-preload blog-page blog-entry">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<header class="subpage-topbar">
+				<a class="subpage-brand" href="../../index.html">B. H. Schafer</a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="fas fa-feather"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>B. H. Schafer</h1>
-								<p>Author of Speculative Fiction</p>
-								<ul class="icons">
-									<li><a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="https://substack.com/@bhschafer?utm_source=user-menu" target="_blank" rel="noopener noreferrer"><img src="../../images/substack.png" alt="Substack" style="width: 24px; height: 24px; vertical-align: middle;" /><span class="label" style="display: none;">Substack</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="../../index.html#intro">Intro</a></li>
-								<li><a href="../../index.html#work">Works</a></li>
-								<li><a href="../../index.html#newsletter">Schafer's Quill</a></li>
-								<li><a href="../">Blog</a></li>
-								<li><a href="../../index.html#about">About</a></li>
-								<li><a href="../../index.html#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+				<nav class="subpage-nav" aria-label="Main navigation">
+					<a href="/start-here/">Start Here</a>
+					<a href="/works/">Works</a>
+					<a href="/newsletter/">Newsletter</a>
+					<a href="/blog/" class="is-active" aria-current="page">Blog</a>
+					<a href="/about/">About</a>
+					<a href="/contact/">Contact</a>
+				</nav>
+
+				<ul class="subpage-socials" aria-label="Social links">
+					<li>
+						<a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer" class="icon brands fa-twitter">
+							<span class="label">Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram">
+							<span class="label">Instagram</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://substack.com/@bhschafer?utm_source=user-menu" target="_blank" rel="noopener noreferrer" class="subpage-substack">
+							Substack
+						</a>
+					</li>
+				</ul>
+			</header>
+			<div id="wrapper">
 
 				<!-- Blog Post -->
 					<main class="blog-shell" aria-labelledby="post-title">
@@ -101,6 +103,7 @@
 			<script src="../../assets/js/breakpoints.min.js"></script>
 			<script src="../../assets/js/util.js"></script>
 			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/subpage-nav.js"></script>
 			<script>
 				document.getElementById('year').textContent = new Date().getFullYear();
 			</script>

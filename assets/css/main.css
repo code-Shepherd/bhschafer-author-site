@@ -1819,6 +1819,13 @@ input, select, textarea {
 		transition: background-color 0.2s ease, color 0.2s ease, font-size 0.2s ease;
 	}
 
+	body.blog-page .subpage-nav a.is-active,
+	body.blog-page .subpage-nav a[aria-current="page"] {
+		color: #111820 !important;
+		background: var(--gold, #d9c182);
+		border-color: var(--gold, #d9c182);
+	}
+
 	body.blog-page .subpage-nav a:hover,
 	body.blog-page .subpage-nav a:focus {
 		color: #1b1f22;

@@ -7,15 +7,22 @@
 <html>
 	<head>
 		<link rel="icon" href="../images/author-logo.png" type="image/png">
-		<title>Press Kit | B. H. Schafer</title>
+		<title>Contact | B. H. Schafer</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Press kit for B. H. Schafer, Jamaican speculative and literary fiction writer. Includes author bios, credits, social links, and contact information.">
+		<meta name="description" content="Contact B. H. Schafer through the site contact form.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="canonical" href="https://bhschafer.com/contact/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="B. H. Schafer" />
+		<meta property="og:title" content="Contact | B. H. Schafer" />
+		<meta property="og:description" content="Contact B. H. Schafer through the site contact form." />
+		<meta property="og:url" content="https://bhschafer.com/contact/" />
+		<meta name="twitter:card" content="summary" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="stylesheet" href="../assets/css/custom.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload blog-page press-kit-page">
+	<body class="is-preload blog-page content-page contact-page">
 
 		<!-- Wrapper and particles -->
 			<div id="particles-js"></div>
@@ -28,7 +35,7 @@
 					<a href="/newsletter/">Newsletter</a>
 					<a href="/blog/">Blog</a>
 					<a href="/about/">About</a>
-					<a href="/contact/">Contact</a>
+					<a href="/contact/" class="is-active" aria-current="page">Contact</a>
 				</nav>
 
 				<ul class="subpage-socials" aria-label="Social links">
@@ -51,51 +58,35 @@
 			</header>
 			<div id="wrapper">
 
-				<!-- Press Kit -->
-					<main class="blog-shell press-kit-shell" aria-labelledby="press-kit-title">
-						<section class="blog-panel press-kit-panel">
-							<header class="blog-post-header">
-								<h2 id="press-kit-title" class="major">Press Kit</h2>
-								<p>Author bios, credits, links, and contact information for B. H. Schafer.</p>
-							</header>
+				<!-- Contact -->
+					<main class="blog-shell content-shell" aria-labelledby="contact-title">
+						<article id="contact" class="blog-panel content-panel">
 
-							<section class="press-kit-section">
-								<h3>Medium Bio</h3>
-								<p>B. H. Schafer is a Computer Science graduate, speculative and literary fiction writer, and the voice behind <em>Schafer's Quill.</em> His short stories have appeared in PREE Literary Magazine. When he's not wrestling with daemons in the machine, he's etching words onto the page. He lives in Jamaica, beneath a highway, much to his chagrin.</p>
-							</section>
+								<h2 id="contact-title" class="major">Contact</h2>
+								<form action="https://api.web3forms.com/submit" method="POST">
 
-							<section class="press-kit-section">
-								<h3>Short Bio</h3>
-								<p>B. H. Schafer is a Dutch-Jamaican speculative and literary fiction writer, Computer Science graduate, and the voice behind <em>Schafer’s Quill</em>.</p>
-							</section>
-
-							<section class="press-kit-section">
-								<h3>Credits</h3>
-								<div class="press-kit-card">
-									<h4>The Clouds Used to Be Grand</h4>
-									<p>Published in <em>PREE Literary Magazine</em>.</p>
-									<p><a href="https://preelit.com/2026/03/18/the-clouds-used-to-be-grand/" target="_blank" rel="noopener noreferrer" class="button">Read at PREE</a></p>
-								</div>
-							</section>
-
-							<section class="press-kit-section">
-								<h3>Social Media</h3>
-								<ul class="alt">
-									<li>Substack: <a href="https://substack.com/@bhschafer" target="_blank" rel="noopener noreferrer">@bhschafer</a></li>
-									<li>X / Twitter: <a href="https://x.com/_bhschafer" target="_blank" rel="noopener noreferrer">@_bhschafer</a></li>
-									<li>Instagram: <a href="https://www.instagram.com/bhschafer_writes/" target="_blank" rel="noopener noreferrer">@bhschafer_writes</a></li>
-								</ul>
-							</section>
-
-							<section class="press-kit-section">
-								<h3>Contact</h3>
-								<p>Email: <a href="mailto:contact@bhschafer.com">contact@bhschafer.com</a></p>
-							</section>
-
-							<p class="section-action">
-								<a href="../about/" class="button">Return to About</a>
-							</p>
-						</section>
+									<input type="hidden" name="access_key" value="60e39894-ea6c-4646-b996-d0d2f03cb120">
+									
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" autocomplete="name" required />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="email" name="email" id="email" autocomplete="email" required />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4" required></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+													</article>
 					</main>
 
 				<!-- Footer -->
