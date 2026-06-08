@@ -95,13 +95,44 @@ def load_markdown_document(source_path: Path) -> MarkdownDocument:
     return MarkdownDocument(metadata=metadata, content=parts[2].lstrip("\n"))
 
 
-def render_inline_markdown(text: str) -> str:
-    rendered = escape(text)
-    rendered = re.sub(r"`([^`]+)`", r"<code>\1</code>", rendered)
-    rendered = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", rendered)
-    rendered = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", rendered)
-    rendered = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: f'<a href="{escape(m.group(2), quote=True)}">{m.group(1)}</a>', rendered)
+def apply_inline_emphasis(escaped_text: str) -> str:
+    """Apply common Markdown emphasis to already-escaped inline text."""
+    rendered = re.sub(r"\*\*([^\s*](?:[^*]*?[^\s*])?)\*\*", r"<strong>\1</strong>", escaped_text)
+    rendered = re.sub(r"(?<![\w_])__([^\s_](?:[^_]*?[^\s_])?)__(?![\w_])", r"<strong>\1</strong>", rendered)
+    rendered = re.sub(r"(?<!\*)\*([^\s*](?:[^*]*?[^\s*])?)\*(?!\*)", r"<em>\1</em>", rendered)
+    rendered = re.sub(r"(?<![\w_])_([^\s_](?:[^_]*?[^\s_])?)_(?![\w_])", r"<em>\1</em>", rendered)
     return rendered
+
+
+def render_inline_text_segment(text: str) -> str:
+    """Render a non-code inline Markdown segment."""
+    rendered_parts: list[str] = []
+    cursor = 0
+    link_pattern = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
+
+    for match in link_pattern.finditer(text):
+        rendered_parts.append(apply_inline_emphasis(escape(text[cursor : match.start()])))
+        label = apply_inline_emphasis(escape(match.group(1)))
+        href = escape(match.group(2), quote=True)
+        rendered_parts.append(f'<a href="{href}">{label}</a>')
+        cursor = match.end()
+
+    rendered_parts.append(apply_inline_emphasis(escape(text[cursor:])))
+    return "".join(rendered_parts)
+
+
+def render_inline_markdown(text: str) -> str:
+    rendered_parts: list[str] = []
+    cursor = 0
+    code_pattern = re.compile(r"`([^`]+)`")
+
+    for match in code_pattern.finditer(text):
+        rendered_parts.append(render_inline_text_segment(text[cursor : match.start()]))
+        rendered_parts.append(f"<code>{escape(match.group(1))}</code>")
+        cursor = match.end()
+
+    rendered_parts.append(render_inline_text_segment(text[cursor:]))
+    return "".join(rendered_parts)
 
 
 def flush_paragraph(lines: list[str], html_lines: list[str]) -> None:
