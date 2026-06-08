@@ -58,7 +58,7 @@ database, or JavaScript framework.
 3. Install the lightweight local build dependencies:
 
    ```sh
-   pip install python-frontmatter markdown
+   pip install -r requirements.txt
    ```
 
 4. Build the static blog output:
