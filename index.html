@@ -59,6 +59,7 @@
 		</script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/tracker.css" />
+		<link rel="stylesheet" href="assets/css/activity.css" />
 		<link rel="stylesheet" href="assets/css/custom.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preload" as="image" href="images/wanderer_above_the_sea_of_fog.webp" type="image/webp"/>
@@ -308,6 +309,38 @@
 			</div>
 
 
+		<!-- Activity -->
+			<div class="activity-backdrop" data-activity-close></div>
+
+			<button
+				class="activity-tab"
+				type="button"
+				aria-controls="activity-panel"
+				aria-expanded="false"
+			>
+				<span>Activity</span>
+			</button>
+
+			<aside
+				id="activity-panel"
+				class="activity-panel"
+				aria-hidden="true"
+				aria-labelledby="activity-title"
+			>
+				<header class="activity-header">
+					<h2 id="activity-title">Activity</h2>
+					<p>Latest dispatches from the workbench.</p>
+				</header>
+
+				<div class="activity-tabs" role="group" aria-label="Activity source">
+					<button class="activity-source-tab is-active" type="button" data-activity-source="substack" aria-pressed="true">Substack</button>
+					<button class="activity-source-tab" type="button" data-activity-source="blog" aria-pressed="false">Blog</button>
+				</div>
+
+				<section class="activity-list" aria-label="Recent activity" aria-live="polite"></section>
+			</aside>
+
+
 		<!-- Trackers -->
 			<div class="tracker-backdrop" data-tracker-close></div>
 
@@ -349,6 +382,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/tracker.js"></script>
+			<script src="assets/js/activity.js"></script>
 
 
 			<!-- Load particles.js from CDN -->
